@@ -8,6 +8,7 @@
 "  Author: Mike Hartington
 "  repo  : https://github.com/mhartington/dotfiles/
 "
+"  co-Author: Eyog Yvon Leonce
 " Plugins  ------------------------------------------------------------------{{{
 
 " Setup dein {{{
@@ -142,11 +143,28 @@
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
 " }}}
-" local {{{
-  call dein#local('~/GitHub', {},['nvim-typescript'])
-  call dein#local('~/GitHub', {},['vim-folds', 'oceanic-next'])
-  call dein#local('~/GitHub', {}, ['nerdtree-git-plugin'])
+" mike hartington#github {{{
+  call dein#add('mhartington/nvim-typescript')
+  call dein#add('mhartington/oceanic-next')
+  call dein#add('mhartington/vim-folds')
+  call dein#add('mhartington/nerdtree-git-plugin')
 " }}}
+
+" vim auto-save {{{
+  call dein#add('vim-scripts/vim-auto-save')
+  let g:auto_save = 1  " enable AutoSave on Vim startup
+
+"}}}
+"Fuzzy search {{{
+"
+  call dein#add('kien/ctrlp.vim')
+  let g:ctrlp_map = '<leader>j'
+  "}}}
+"Focus mode {{{
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('amix/vim-zenroom2')
+  map <leader>z :Goyo<cr>
+"}}}
 " Has to be last according to docs
   call dein#add('ryanoasis/vim-devicons')
 
@@ -161,10 +179,6 @@
 
 " System Settings  ----------------------------------------------------------{{{
 
-  source ~/.local.vim
-  if exists('g:GuiLoaded')
-    Guifont Hasklig:h15
-  endif
 " Neovim Settings
   set termguicolors
   set mouse=a
@@ -996,9 +1010,9 @@ endif
 
 " Python --------------------------------------------------------------------{{{
 
-  " let g:python_host_prog = '/usr/local/opt/python@2/bin/python2'
+  " let g:python_host_prog = '/usr/bin/python2'
   let g:loaded_python_provider = 0
-  let g:python3_host_prog = '/usr/local/bin/python3'
+  let g:python3_host_prog = '/usr/bin/python3'
   " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
   let g:jedi#auto_vim_configuration = 0
   let g:jedi#documentation_command = "<leader>k"
