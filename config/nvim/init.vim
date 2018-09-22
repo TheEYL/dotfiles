@@ -39,7 +39,7 @@
   call dein#add('majutsushi/tagbar')
   call dein#add('tmux-plugins/vim-tmux')
   call dein#add('Shougo/context_filetype.vim')
-  " call dein#add('Konfekt/FastFold')
+  call dein#add('Konfekt/FastFold')
   call dein#add('mhinz/vim-sayonara')
   call dein#add('mattn/webapi-vim')
   call dein#add('mattn/gist-vim')
@@ -157,7 +157,7 @@
 "}}}
 "Fuzzy search {{{
 "
-  call dein#add('kien/ctrlp.vim')
+  call dein#add('ctrlpvim/ctrlp.vim')
   let g:ctrlp_map = '<leader>j'
   "}}}
 "Focus mode {{{
@@ -165,6 +165,10 @@
   call dein#add('amix/vim-zenroom2')
   map <leader>z :Goyo<cr>
 "}}}
+" kana#github {{{
+  call dein#add('kana/vim-textobj-entire')
+  call dein#add('kana/vim-textobj-user')
+" }}}
 " Has to be last according to docs
   call dein#add('ryanoasis/vim-devicons')
 
