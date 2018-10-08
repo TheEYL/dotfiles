@@ -37,8 +37,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #setting the terminal to vi-mode
-set editing-mode vi
-set blink-matching-paren on
+# set editing-mode vi
+# set blink-matching-paren on
+bindkey -v
 
 # powerline fonts
 function powerline_precmd() {
