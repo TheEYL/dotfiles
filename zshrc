@@ -36,6 +36,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+#setting the terminal to vi-mode
+set editing-mode vi
+set blink-matching-paren on
 
 # powerline fonts
 function powerline_precmd() {
@@ -60,3 +63,4 @@ export NVM_DIR="$HOME/.nvm"
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+
