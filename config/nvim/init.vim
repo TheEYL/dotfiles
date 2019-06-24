@@ -144,7 +144,8 @@
   call dein#add('honza/vim-snippets')
 " }}}
 " mike hartington#github {{{
-  call dein#add('mhartington/nvim-typescript')
+  " call dein#add('mhartington/nvim-typescript')
+  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
   call dein#add('mhartington/oceanic-next')
   call dein#add('mhartington/vim-folds')
   call dein#add('mhartington/nerdtree-git-plugin')
@@ -153,7 +154,8 @@
 " vim auto-save {{{
   call dein#add('vim-scripts/vim-auto-save')
   let g:auto_save = 1  " enable AutoSave on Vim startup
-
+  let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+  let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
 "}}}
 "Fuzzy search {{{
 "
@@ -163,12 +165,14 @@
 "Focus mode {{{
   call dein#add('junegunn/goyo.vim')
   call dein#add('amix/vim-zenroom2')
-  map <leader>z :Goyo<cr>
 "}}}
 " kana#github {{{
 call dein#add('kana/vim-textobj-entire')
 call dein#add('kana/vim-textobj-user')
 " }}}
+"vim-wiki {{{
+call dein#add('vimwiki/vimwiki')
+"}}}
 " Has to be last according to docs
 call dein#add('ryanoasis/vim-devicons')
 
@@ -194,6 +198,7 @@ set nopaste
 autocmd BufWritePre * %s/\s\+$//e
 set noshowmode
 set noswapfile
+set nostartofline
 filetype on
 set  number
 set numberwidth=1
@@ -1000,6 +1005,7 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 " Go ------------------------------------------------------------------------{{{
 
   let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+  let g:go_version_warning = 0
 
 "}}}
 
@@ -1016,9 +1022,8 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 "}}}
 
 " Python --------------------------------------------------------------------{{{
-
   " let g:python_host_prog = '/usr/bin/python2'
-  let g:loaded_python_provider = 0
+  let g:loaded_python_provider = 1
   let g:python3_host_prog = '/usr/bin/python3'
   " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
   let g:jedi#auto_vim_configuration = 0
@@ -1033,6 +1038,17 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 
 "}}}
 
+"vim-wiki --------------------------------------------------------------{{{
+ let wiki_1 = {}
+ let wiki_1.path = '~/Documents/Development/wiki/'
+ let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+"  let wiki_1.html_template = '~/public_html/template.tpl'
+"  let wiki_2  = {}
+"  let wiki_2.path  = '~/wiki/'
+" "}}}
+" goyo------------------------------------------------------------------------------{{{
+  map <leader>z :Goyo<cr>
+ "}}}
 let g:tagbar_left=1
 let g:tagbar_type_typescript = {
   \ 'ctagstype': 'typescript',

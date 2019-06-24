@@ -57,6 +57,18 @@ function install_powerline_precmd() {
 
 export DEV="$HOME/Documents/Development"
 
+DEV=~/Documents/Development
+
+export UE4_ROOT=~/UnrealEngine_4.21
+alias eclipse="/home/leo/Documents/Development/epita/epita-dev/java/eclipse-jee-2018-09-linux-gtk-x86_64/eclipse/eclipse"
+alias dev="cd $DEV"
+alias epita_dev="cd $DEV/epita/epita-dev/"
+alias self_taught="cd $DEV/self-taught"
+alias activatepy3="source ~/myvenv/bin/activate"
+alias my_virtual_unix="cd $DEV/Shell/; vagrant up; vagrant ssh"
+alias nightmode="redshift -l 48.8:2.3667"
+export KAGGLE_PASSWORD="4anotherP@ss"
+export KAGGLE_USERNAME="bluenakama"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -65,3 +77,8 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
+export PATH=/home/leo/.nvm/versions/node/v11.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin:/snap/bin:/snap/bin
+
+alias adjust_time="sudo htpdate -a google.com"
+alias mathlab=/usr/local/MATLAB/R2018b/bin/matlab
+alias firefox="env MOZ_USE_XINPUT2=1 firefox"
