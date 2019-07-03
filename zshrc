@@ -62,9 +62,10 @@ DEV=~/Documents/Development
 export UE4_ROOT=~/UnrealEngine_4.21
 alias eclipse="/home/leo/Documents/Development/epita/epita-dev/java/eclipse-jee-2018-09-linux-gtk-x86_64/eclipse/eclipse"
 alias dev="cd $DEV"
-alias epita_dev="cd $DEV/epita/epita-dev/"
+alias epita_dev="cd $DEV/epita-dev/"
 alias self_taught="cd $DEV/self-taught"
-alias activatepy3="source ~/myvenv/bin/activate"
+alias activatepy3="source ~/python-env/myvenv/bin/activate"
+alias carlapy3="source ~/python-env/carla-py/bin/activate"
 alias my_virtual_unix="cd $DEV/Shell/; vagrant up; vagrant ssh"
 alias nightmode="redshift -l 48.8:2.3667"
 export KAGGLE_PASSWORD="4anotherP@ss"
@@ -78,7 +79,27 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 export PATH=/home/leo/.nvm/versions/node/v11.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin:/snap/bin:/snap/bin
-
+export PATH="/home/leo/.pyenv/bin:$PATH"
 alias adjust_time="sudo htpdate -a google.com"
 alias mathlab=/usr/local/MATLAB/R2018b/bin/matlab
 alias firefox="env MOZ_USE_XINPUT2=1 firefox"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/leo/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/leo/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leo/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+# export PATH=$PATH:/home/leo/Tools/openfst-1.5.0/include/fst/:/home/leo/Tools/opengrm-1.2.1/bin
+export PATH=$PATH:/home/leo/Tools/openfst-1.7.0/bin/:/home/leo/Tools/opengrm-1.3.5/bin
+export PATH=$PATH:/home/leo/Tools//openfst-1.7.2/bin/:/home/leo/Tools//opengrm-1.3.5/bin
+alias data-viz="cd /home/leo/Documents/Development/epita-dev/data-science/data-visualization"
+alias dscience="cd /home/leo/Documents/Development/epita-dev/data-science"
